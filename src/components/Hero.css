@@ -1,0 +1,22 @@
+.hero-parallax {
+  position: relative;
+  height: 100vh;
+  background-image: url('/lolo.png'); /* Hero background image */
+  background-attachment: fixed; /* THIS MAKES PARALLAX WORK */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.4); /* dark overlay so text is visible */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
