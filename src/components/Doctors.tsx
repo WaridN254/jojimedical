@@ -1,26 +1,19 @@
-import { useState } from 'react';
+
 import { motion } from 'framer-motion';
 
 const Doctors = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  
 
   const doctors = [
+
     {
-      name: 'Dr. Jonah',
+      name: 'Dr. Jonathan',
       specialty: 'General Doctor',
-      image: 'https://images.unsplash.com/photo-1594824475317-d3c0b5b0c3b0?w=300&h=300&fit=crop&crop=face',
-      rating: 4.7,
-      experience: '10+ years'
+      image: '/doc.jpg',
+      rating: 4.9,
+      experience: '15+ years'
     }
   ];
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % doctors.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + doctors.length) % doctors.length);
-  };
 
   return (
     <section className="py-20 bg-gray-50">
@@ -61,28 +54,6 @@ const Doctors = () => {
             </motion.p>
           </div>
 
-          <div className="hidden md:flex space-x-2">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={prevSlide}
-              className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
-            >
-              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={nextSlide}
-              className="w-12 h-12 bg-blue-600 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 transition-colors"
-            >
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </motion.button>
-          </div>
         </div>
 
         {/* Doctors Grid */}
@@ -98,7 +69,7 @@ const Doctors = () => {
               className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer"
             >
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden">
+                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue-100 shadow-lg">
                   <img
                     src={doctor.image}
                     alt={doctor.name}
@@ -117,25 +88,6 @@ const Doctors = () => {
           ))}
         </div>
 
-        {/* Mobile Navigation */}
-        <div className="flex md:hidden justify-center mt-8 space-x-2">
-          <button
-            onClick={prevSlide}
-            className="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center"
-          >
-            <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={nextSlide}
-            className="w-10 h-10 bg-blue-600 rounded-full shadow-lg flex items-center justify-center"
-          >
-            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
       </div>
     </section>
   );

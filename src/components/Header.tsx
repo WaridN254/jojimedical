@@ -76,12 +76,45 @@ const Header = () => {
             className="md:hidden py-4 border-t"
           >
             <div className="flex flex-col space-y-4">
-              <Link to="/" className="text-gray-700 hover:text-blue-600">Home</Link>
-              <Link to="/about" className="text-gray-700 hover:text-blue-600">About us</Link>
-              <Link to="/services" className="text-gray-700 hover:text-blue-600">Services</Link>
-              <Link to="/doctors" className="text-gray-700 hover:text-blue-600">Doctors</Link>
-              <Link to="/contact" className="text-gray-700 hover:text-blue-600">Contact</Link>
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors w-fit">
+              <Link 
+                to="/" 
+                className="text-gray-700 hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                to="/about" 
+                className="text-gray-700 hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About us
+              </Link>
+              <Link 
+                to="/services" 
+                className="text-gray-700 hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Services
+              </Link>
+              <Link 
+                to="/doctors" 
+                className="text-gray-700 hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Doctors
+              </Link>
+              <Link 
+                to="/contact" 
+                className="text-gray-700 hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              <button 
+                className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors w-fit"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Get Started
               </button>
             </div>
